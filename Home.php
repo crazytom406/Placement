@@ -361,7 +361,7 @@
                         </button>
                         <div class="dropdown-content">
                           <a class="items" href="LoginPage.php">Student</a>
-                          <a class="items" href="LoginPage.php">Admin</a>
+                          <a class="items" href="AdminLoginpage.php">Admin</a>
                           <a class="items" href="LoginPage.php">Company</a>
                         </div>
                     </div>

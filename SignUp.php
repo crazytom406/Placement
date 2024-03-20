@@ -1,29 +1,27 @@
 <?php
     @include 'config.php';
-
-    if(ISSET($_POST['login']))
+    if(ISSET($_POST['signup']))
     {
-        //echo "Login Form Submitted";
-        // db query
-        $hash_pass = md5($_POST['loginpassword']);
-        $select = "SELECT * FROM user WHERE email='".$_POST['loginemail']."' and password ='".$hash_pass."'";
-        
-        $result = mysqli_query($conn, $select);
-        if(mysqli_num_rows($result)> 0)
+        $name = mysqli_real_escape_string($conn,$_POST['name']);
+        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        $pass = md5($_POST['password']);
+        $con_password=md5($_POST['con_password']);
+        $user_type = $_POST['user_type'];
+
+        if($pass!=$con_password)
         {
-            //Navigation based on User_type
-            while($row=mysqli_fetch_assoc($result))
-            {
-                if($row['user_type']=='user')
-                {
-                    header('location:StudentHomePage.php');
-                    break;
-                }
-            }
+           echo "<script>alert('just check the password!');</script>";
+        }
+        else if($user_type==-1)
+        {
+            echo "<script>alert('Just select the user type!');</script>";
         }
         else
         {
-            echo "<script>alert('User does not exist, Please check your email or password');</script>";
+            $insert = "INSERT INTO user(name, email, password ,user_type) VALUES('$name' ,'$email' , '$pass' , '$user_type')";
+            mysqli_query($conn, $insert);
+            echo "<script>alert('Account Created Succesfully!');
+            window.location.href='LoginPage.php';</script>";
         }
     }
 ?>
@@ -44,30 +42,45 @@
 </head>
 <body>
     <section class="container forms">
-        <div class="form login">
+
+        <!-- Signup Form -->
+
+        <div class="form">
             <div class="form-content">
-                <header>Login</header>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                <header>Signup</header>
+                    
+                   <div class="field input-field">
+                        <input name="name" type="text" placeholder="Name" class="input" required>
+                    </div>
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input" name="loginemail">
+                        <input name="email" type="email" placeholder="Email" class="input" required >
                     </div>
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password" name="loginpassword">
+                        <input name="password" id="password" type="password" placeholder="Create password"  class="password" required >
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
 
-                    <div class="form-link">
-                        <a href="#" class="forgot-pass">Forgot password?</a>
+                    <div class="field input-field">
+                        <input name="con_password" id="confrm-password" type="password" placeholder="Confirm password" class="password" required >
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
 
+                    <p id="message"></p>
+
+                    <div class="field input-field">
+                        <select name="user_type" id="access" required>
+                        <option value="-1" >--SELECT USERTYPE--</option>
+                        <option value="user">User</option>
+                        </select>
+                    </div>
                     <div class="field button-field">
-                        <button name="login" type="submit">Login</button>
+                        <button name="signup" type="submit">Signup</button>
                     </div>
                 </form>
-
                 <div class="form-link">
-                    <span>Don't have an account? <a href="SignUp.php" class="link signup-link">Signup</a></span>
+                    <span>Already have an account? <a href="LoginPage.php" class="link login-link">Login</a></span>
                 </div>
             </div>
 
@@ -87,7 +100,6 @@
                 </a>
             </div>
         </div>
-
     </section>
 
     <!-- JavaScript -->
@@ -112,23 +124,6 @@
 
             })
         })
-
-        // function checkpassword(){
-        //     let password = document.getElementById("password").value;
-        //     let cnfrmPassword = document.getElementById("confrm-password").value;
-        //     let message= document.getElementById("message");
-        //     if(password.length != 0){
-        //         if(password==cnfrmPassword){
-        //             message.textContent="Password Match";
-        //             message.style.backgroundColor ="#3ae374";
-        //         }
-        //         else{
-        //             message.textContent="Password not matched!";
-        //         }   message.style.backgroundColor ="#ff4d4d";
-        //     }
-
-
-        //}
 
     </script>
 </body>
