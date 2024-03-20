@@ -57,6 +57,13 @@
                 </li>
                 <li>
                     <a href="#">
+                        <i class="fas fa-key"></i>
+                        <div>Login's</div>
+                    </a>
+                </li>
+               
+                <li>
+                    <a href="#">
                         <i class="fas fa-cog"></i>
                         <div>Setting</div>
                     </a>
