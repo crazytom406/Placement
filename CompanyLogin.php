@@ -6,19 +6,18 @@
         //echo "Login Form Submitted";
         // db query
         $hash_pass = $_POST['loginpassword'];
-        $select = "SELECT * FROM admin WHERE name='".$_POST['loginemail']."' and password ='".$hash_pass."'";
-
-        echo $select;
-        
+        $select = "SELECT * FROM company WHERE name='".$_POST['loginemail']."' and password ='".$hash_pass."'";        
         $result = mysqli_query($conn, $select);
-        print_r($result);
+        //print_r($result);
         if(mysqli_num_rows($result)> 0)
         {
             //Navigation based on User_type
             while($row=mysqli_fetch_assoc($result))
             {
-                header('location:Admindashboard.php');
-            }
+            //     header('location:ViewStudent.php');
+            //     break;
+            echo "<script>window.location.href='ViewStudent.php';</script>";
+         }
         }
         else
         {

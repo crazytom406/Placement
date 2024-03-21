@@ -6,7 +6,53 @@
     <title>Admin</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    
+    <style>
+        .dropbtn {
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  width: 100px;
+    text-decoration: none;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown i
+{
+    min-width: 65px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-height: 150px;
+  min-width: 160px;
+  margin-left: 30%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 220px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;color:black;min-width:160px;}
+
+.dropdown:hover .dropdown-content {display: block;}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -56,13 +102,18 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-key"></i>
-                        <div>Login's</div>
-                    </a>
+                        <div class="dropdown">
+                            <i class="fas fa-key"></i>
+                            <div class="dropbtn">Login's</div>
+                            <div class="dropdown-content">
+                              <a href="authorizationadmin.php" style="color:black;">Company</a>
+                              <a href="authorizationadmin.php" style="color:black;">Admin</a>
+                              <a href="authorizationadmin.php" style="color:black;">Student</a>
+                            </div>
+                        </div>
                 </li>
                
-                <li>
+                <li style="margin-top: 168px;">
                     <a href="#">
                         <i class="fas fa-cog"></i>
                         <div>Setting</div>

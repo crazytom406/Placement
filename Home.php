@@ -362,7 +362,7 @@
                         <div class="dropdown-content">
                           <a class="items" href="LoginPage.php">Student</a>
                           <a class="items" href="AdminLoginpage.php">Admin</a>
-                          <a class="items" href="LoginPage.php">Company</a>
+                          <a class="items" href="CompanyLogin.php">Company</a>
                         </div>
                     </div>
                 </li>

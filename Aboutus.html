@@ -137,7 +137,50 @@
             font-size: 1.9rem;
             letter-spacing: 1px;
         }
+        /* introduction */
+        #about-container{
+            display: flex;
+            align-items: center;
+            padding: 8vw 8vw 2vw 8vw;
+        }
 
+        #about-container .about-img img{
+            height: 110h;
+            width: 110vh;
+        }
+   
+        #about-container .about-text h2{
+            color: #29303b;
+            padding: 10px ;
+            font-size: 23px;
+        }
+        #about-container .about-text p{
+            color: #686f7a;
+            padding: 5px;
+            font-weight: 300;
+        }
+
+        #about-container .about-text .about-fe{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        #about-container .about-text .about-fe img{
+            width: 50px;
+            background-size: cover;
+            background-position: center;
+            margin-right: 20px;
+        }
+        #about-container .about-text .about-fe .fe-text{
+            width: 90%;
+        }
+        #about-container .about-text .about-fe .fe-text h5{
+            font-size: 16px;
+            color: #29303b;
+        }
+        
         /* features */
         .features{
             padding: 5vw 8vw 0 8vw;
@@ -211,29 +254,74 @@
 
 
         /* companies */
-        .companies-cont{
-            padding: 8vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            flex-wrap: wrap;
-         }
-         .companies-cont h2{
-           text-align: center;
-           margin: 10px 0;
-           margin-left: 45%;
-           font-family: 'Poppins', sans-serif;
-           justify-content: center;
-           font-weight: 600;
-           color: rgb(21, 21, 100);
-         }
-        .img-container {
-            margin: 10px 40px;
-            float: left;
-            margin-top: 10px;
+        .slider{
+            height: 250px;
+            margin: 30px 0;
+            position: relative;
+            width: 90%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+
         }
-        
+        .slider h2{
+            text-align: center;
+            font-size: 23px;
+            color: black;
+            font-weight: 300px;
+        }
+
+        .slide-track{
+            display: flex;
+            width: calc(250px*12);
+            animation: scroll 40s linear infinite;
+            
+        }
+        .slide-track:hover{
+            animation-play-state: paused;
+        }
+        @keyframes scroll{
+            0%{
+                transform: translateX(0) ;
+            }
+            100%{
+                transform: translateX(calc(-250px * 6));
+            }
+        }
+        .slide{
+            height: 200px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            perspective: 100px;
+        }
+
+        .slide img{
+            width: 100%;
+            transition: transform 1s;
+        }
+        .slide img:hover{
+            transform: translateZ(20px);
+        }
+         /* gradinet */
+         .slider::before,.slider::after{
+            /* background:linear-gradient(to right,rgba(255, 255, 255, 1)0%,rgba(255,255,255,0)100%); */
+            content:'';
+            height: 100%;
+            position: absolute;
+            width: 15%;
+            z-index: 2;
+         }
+         .slider::before{
+            left: 0;
+            top: 0;
+         }
+         .slider::after{
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+         }
 
         /* footer */
         footer{
@@ -332,28 +420,34 @@
     <!-- home -->
    <section id="about-home" class="about-section">
        <h2>About Joseph’s /</h2>
-        
-   </section id="about-container">
-    <div class="about-img">
-        <img src="Images/aboutimg1.jpeg" alt="">
+    </section>
 
+
+    <!-- introduction -->
+   <section id="about-container">
+    <div class="about-img">
+        <img src="Images/template1.jpg" alt="">
     </div>
     <div class="about-text">
-        <h2>Welcome to St.Joseph's,Enhance your career prospects through Joseph's Placement Cell</h2>
+        <h2>Welcome to St.Joseph's<br>Enhance your career prospects through Joseph's Placement Cell</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto facilis perferendis illo enim labore neque non, optio atque officiis porro.</p>
         <div class="about-fe">
-            <img>
+             <!-- icon images -->
+             <img src="Images/teacher1.png" alt="">
             <div class="fe-text">
                 <h5>50+ Companies</h5>
-                <p>We have good opportunity and well trained co-ordinators to give proper guideness 
-                    
-                </p>
+                <p>We have good opportunity and well trained co-ordinators to give proper guideness </p>
             </div>
         </div>
+        <div class="about-fe">
+            
+           <img src="Images/teacher1.png" alt="">
+           <div class="fe-text">
+               <h5>50+ Companies</h5>
+               <p>We have good opportunity and well trained co-ordinators to give proper guideness </p>
+           </div>
+       </div>
     </div>
-
-   <section>
-
    </section>
 
    <!-- Features -->
@@ -434,25 +528,28 @@
     </section>
 
     <!-- companies -->
-<section class="companies-cont">
-    <h2 class="comph2">COMPANIES</h2><br>
- <div class="clearfix">
-  <div class="img-container">
-  <img src="Images/Infosys.png" alt="tata" width="150px" height="150px">
-  </div>
-  <div class="img-container">
-  <img src="Images/Mahendra.png" alt="amazon" width="150px" height="150px">
-  </div>
-  <div class="img-container">
-  <img src="Images/TCS.png" alt="google" width="150px" height="150px">
-  </div>
-  <div class="img-container">
-    <img src="Images/TCS.png" alt="google" width="150px" height="150px">
-  </div>
-  <div class="img-container">
-    <img src="Images/TCS.png" alt="google" width="150px" height="150px">
-    </div>
-</section>
+    <section>
+        <div class="slider">
+            <h2>OUR TRUSTED PARTNER</h2>
+            <div class="slide-track">
+                <div class="slide"><img src="Images/amazon.webp" alt=""></div>
+                <div class="slide"><img src="Images/google.jpg" alt=""></div>
+                <div class="slide"><img src="Images/zoho.png" alt=""></div>
+                <div class="slide"><img src="Images/ibm1.jpeg" alt=""></div>
+                <div class="slide"><img src="Images/facebook.avif" alt=""></div>
+                <div class="slide"><img src="Images/TCS.png" alt=""></div>
+
+
+                <div class="slide"><img src="Images/amazon.webp" alt=""></div>
+                <div class="slide"><img src="Images/google.png" alt=""></div>
+                <div class="slide"><img src="Images/zoho.png" alt=""></div>
+                <div class="slide"><img src="Images/ibm1.jpeg" alt=""></div>
+                <div class="slide"><img src="Images/facebook.avif" alt=""></div>
+                <div class="slide"><img src="Images/TCS.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
     
     <!-- footer -->
     <footer id="section1">
