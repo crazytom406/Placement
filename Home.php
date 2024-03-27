@@ -254,7 +254,7 @@
 
 
         /* companies */
-        .companies-cont{
+        /* .companies-cont{
             padding: 8vw;
             display: flex;
             justify-content: space-between;
@@ -276,13 +276,13 @@
             float: left;
             margin-top: 10px;
         }
-        
+         */
 
         /* footer */
         footer{
             padding: 7vw;
             margin: 0;
-            margin-top: 5px;
+            margin-top: 40px;
             background-color: #101c32;
             display: flex;
             justify-content: space-between;
@@ -366,7 +366,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a  href="#">About</a></li>
+                <li><a  href="Aboutus.php">About</a></li>
                 <li><a href="#section1">Contact</a></li>
             </ul>
         </div>
@@ -462,7 +462,7 @@
     </section>
 
     <!-- companies -->
-<section class="companies-cont">
+<!-- <section class="companies-cont">
     <h2 class="comph2">COMPANIES</h2><br>
  <div class="clearfix">
   <div class="img-container">
@@ -480,7 +480,7 @@
   <div class="img-container">
     <img src="Images/TCS.png" alt="google" width="150px" height="150px">
     </div>
-</section>
+</section> -->
     
     <!-- footer -->
     <footer id="section1">

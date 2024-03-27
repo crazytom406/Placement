@@ -14,9 +14,9 @@
             //Navigation based on User_type
             while($row=mysqli_fetch_assoc($result))
             {
-            //     header('location:ViewStudent.php');
+            //    header('location:companypage.php');
             //     break;
-            echo "<script>window.location.href='ViewStudent.php';</script>";
+             echo "<script>window.location.href='companypage.php';</script>";
          }
         }
         else
@@ -283,6 +283,12 @@
             </div>
 
             <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="Images/google.svg" alt="" class="google-img">
+                    <span>Login with Google</span>
+                </a>
+            </div>
         </div>       
     </section>
 

@@ -82,7 +82,7 @@
 
             <div class="media-options">
                 <a href="#" class="field google">
-                    <img src="Images/search.png" alt="" class="google-img">
+                    <img src="Images/google.jpg" alt="" class="google-img">
                     <span>Login with Google</span>
                 </a>
             </div>

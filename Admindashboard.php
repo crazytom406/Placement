@@ -12,7 +12,9 @@
   font-size: 16px;
   border: none;
 }
-
+.dropbtn:hover{
+    color: #299b63;
+}
 .dropdown {
   position: relative;
   width: 100px;
@@ -21,6 +23,9 @@
     height: 60px;
     display: flex;
     align-items: center;
+}
+.dropdown:hover{
+    color: #299b63;
 }
 
 .dropdown i
@@ -64,7 +69,7 @@
                 <input type="search" id="searchBar" placeholder="search here">
                 <label for="search"><i class="fas fa-search"></i></label>
             </div>
-            <i class="fas fa-bell"></i>
+            <i class="fas fa-bell" id="notifi" ></i>
             <div class="user">
                 <img src="Images/user.png" alt="">
             </div>
@@ -120,7 +125,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="AdminLoginpage.php">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <div>Logout</div>
                     </a>
@@ -167,22 +172,12 @@
                 </div>
             </div>
             
-            <div class="tables">
-                <div class="campus-visiting">
-                    <div class="heading">
-                        <h2>On-Campus Drive</h2>
-                        <a href="#" class="btn">view all</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="campus-visiting">
-                    <div class="heading">
-                        <h2>On-Campus Drive</h2>
-                        <a href="#" class="btn">view all</a>
-                        </h2>
-                    </div>
-                </div>
-             
+             <div class="charts">
+                <div class="charts"></div>
+                <div class="new-student"></div> 
+            </div> 
+        </div>
+        
         </div>
    </div>
  </div>

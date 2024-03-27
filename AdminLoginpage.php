@@ -284,6 +284,12 @@
             </div>
 
             <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="Images/google.svg" alt="" class="google-img">
+                    <span>Login with Google</span>
+                </a>
+            </div>
         </div>       
     </section>
 

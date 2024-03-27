@@ -36,6 +36,7 @@
         color: rgb(24, 24, 49);
        }
         nav{
+            
             position: fixed;
             width: 100%;
             background-color: white;
@@ -45,6 +46,7 @@
             text-align: center;
             justify-content: space-between;
             box-shadow: 2px 2px 10px rgb(0, 0, 0.15);
+            z-index: 2;
             
         }
         nav img{
@@ -254,74 +256,58 @@
 
 
         /* companies */
-        .slider{
-            height: 250px;
-            margin: 30px 0;
-            position: relative;
-            width: 90%;
-            display: grid;
-            place-items: center;
-            overflow: hidden;
+        @keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 
-        }
-        .slider h2{
-            text-align: center;
-            font-size: 23px;
-            color: black;
-            font-weight: 300px;
-        }
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 30px;
+}
 
-        .slide-track{
-            display: flex;
-            width: calc(250px*12);
-            animation: scroll 40s linear infinite;
-            
-        }
-        .slide-track:hover{
-            animation-play-state: paused;
-        }
-        @keyframes scroll{
-            0%{
-                transform: translateX(0) ;
-            }
-            100%{
-                transform: translateX(calc(-250px * 6));
-            }
-        }
-        .slide{
-            height: 200px;
-            width: 250px;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            perspective: 100px;
-        }
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
 
-        .slide img{
-            width: 100%;
-            transition: transform 1s;
-        }
-        .slide img:hover{
-            transform: translateZ(20px);
-        }
-         /* gradinet */
-         .slider::before,.slider::after{
-            /* background:linear-gradient(to right,rgba(255, 255, 255, 1)0%,rgba(255,255,255,0)100%); */
-            content:'';
-            height: 100%;
-            position: absolute;
-            width: 15%;
-            z-index: 2;
-         }
-         .slider::before{
-            left: 0;
-            top: 0;
-         }
-         .slider::after{
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
-         }
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), transparent);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), transparent);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 80px;
+  margin: 0 40px;
+}
+        
 
         /* footer */
         footer{
@@ -398,7 +384,7 @@
         <img src="Images/homepage_logo.png" alt="">
         <div class="navigation">
             <ul>
-                <li><a  href="#home">Home</a></li>
+                <li><a  href="Home.php">Home</a></li>
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn">Login
@@ -528,27 +514,30 @@
     </section>
 
     <!-- companies -->
-    <section>
-        <div class="slider">
-            <h2>OUR TRUSTED PARTNER</h2>
-            <div class="slide-track">
-                <div class="slide"><img src="Images/amazon.webp" alt=""></div>
-                <div class="slide"><img src="Images/google.jpg" alt=""></div>
-                <div class="slide"><img src="Images/zoho.png" alt=""></div>
-                <div class="slide"><img src="Images/ibm1.jpeg" alt=""></div>
-                <div class="slide"><img src="Images/facebook.avif" alt=""></div>
-                <div class="slide"><img src="Images/TCS.png" alt=""></div>
-
-
-                <div class="slide"><img src="Images/amazon.webp" alt=""></div>
-                <div class="slide"><img src="Images/google.png" alt=""></div>
-                <div class="slide"><img src="Images/zoho.png" alt=""></div>
-                <div class="slide"><img src="Images/ibm1.jpeg" alt=""></div>
-                <div class="slide"><img src="Images/facebook.avif" alt=""></div>
-                <div class="slide"><img src="Images/TCS.png" alt=""></div>
-            </div>
+    <div class="logos"> 
+        <h2 style="font-weight: 600; color: black; font-size: 24px; text-align: center; margin-bottom: 50px;">OUR TRUSTED PARTNER</h2>
+        <div class="logos-slide">
+          <img src="Images/TCS.png" />
+          <img src="Images/Mahendra.png" />
+          <img src="Images/Infosys.png" />
+          <img src="Images/facebook.avif" />
+          <img src="Images/ibm1.jpeg" />
+          <img src="Images/zoho.png" />
+          <img src="Images/google.jpg" />
+          <img src="Images/amazon.webp" />
         </div>
-    </section>
+  
+        <div class="logos-slide">
+            <!-- <img src="Images/ril.jpg" /> -->
+            <img src="Images/BMW.png" />
+            <img src="Images/meta.jpeg" />
+            <img src="Images/micro.png" />
+            <img src="Images/sap.png" />
+            <img src="Images/Accenture.jpg" />
+            <img src="Images/Wipro.png" />
+            <img src="Images/Paytm.wine.png" />
+          </div>
+      </div>
 
     
     <!-- footer -->
@@ -589,5 +578,5 @@
         </div>
         </div>
     </footer>
-    </body>
+</body>
 </html>

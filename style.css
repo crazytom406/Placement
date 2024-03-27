@@ -81,6 +81,12 @@ html{
     width: 100%;
     list-style: none;
 }
+.toggle ul li:hover{
+    background:#fff ;
+}
+.toggle ul li:hover a{
+    color: #299B63;
+}
 .toggle ul li a{
     width: 100px;
     text-decoration: none;
@@ -94,6 +100,7 @@ html{
     font-size: 30px;
     text-align: center;
 }
+
 
 /* main section  */
 .main{
@@ -122,6 +129,18 @@ html{
     border-radius: 10px;
     box-shadow: 0 7px 25px 0 rgba(0,0, 0, 0.08);
 }
+.cards .card:hover{
+    background:  #299b63;
+}
+.cards .card:hover .number{
+    color: #fff;
+}
+.cards .card:hover .card-name{
+    color: #fff;
+}
+.cards .card:hover .icon-box i{
+    color: #fff;
+}
 .number{
     font-size: 35px;
     font-weight: 500;
@@ -145,5 +164,9 @@ html{
     align-items: self-start;
     padding: 0 20px 20px 20px;
 }
+.tables .recent-payment{
+     min-height: 50vh;
+     background: white;
+     margin: 0 25px 25px 25px;
 
-
+}
